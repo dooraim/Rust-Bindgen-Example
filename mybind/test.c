@@ -1,5 +1,5 @@
-#include <test2.h>
-#include <test3.h>
+#include "include/test2.h"
+#include "include2/test3.h"
 
 // add.c
 int add(int x, int y) {

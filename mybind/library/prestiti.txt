@@ -1,0 +1,16 @@
+GR00 CarloRovati 24 7 2017
+LL12 PaoloBaleri 7 7 2017
+LL12 LucaMilfiori 8 7 2012
+ED65 GiovannaDelmonte 29 6 2018
+WE09 ChiaraFoschi 15 7 2017
+ED65 LucillaBorone 12 7 2018
+IU01 GennaroLodato 10 7 2015
+SD12 GiuseppeCancellieri 1 7 2017
+ED65 MariaBartali 20 7 2017
+DW09 LetiziaMasi 3 7 2017
+FF66 MassimoRivoli 18 7 2017
+FF66 CaterinaSforza 1 8 2016
+IU01 GiovannaDelmonte 2 8 2015
+FF66 GennaroLodato 10 9 2017
+XI22 LucillaBorone 28 5 2014
+SS98 GiovannaDelmonte 15 8 2029
