@@ -9,7 +9,7 @@ RUSTC = rustc
 C_LIB_DIR = mybind
 SRC_DIR = src
 BINDINGS_FILE = $(SRC_DIR)/bindings.rs
-LIBRARY = $(C_LIB_DIR)/libtest.a
+LIBRARY = $(C_LIB_DIR)/libtest.a $(SRC_DIR)/mylibrary.rs $(SRC_DIR)/book.rs
 
 # C source files
 SRC = $(C_LIB_DIR)/test.c $(C_LIB_DIR)/include/test2.c $(C_LIB_DIR)/include2/test3.c $(C_LIB_DIR)/library/biblioteca.c 

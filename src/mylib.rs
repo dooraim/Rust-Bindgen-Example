@@ -11,6 +11,7 @@
 
 include!(r#"./bindings.rs"#);
 
+
 impl Default for Libro {
     fn default() -> Self {
         Libro {

@@ -23,6 +23,8 @@ use mylib::max_num_libri;
 use mylib::add;
 use mylib::leggiLibri;
 use std::ffi::{CString, c_char};
+mod book;
+use book::*;
 
 fn main() {
     
@@ -51,6 +53,11 @@ fn main() {
         let libro = &l[i];
         unsafe{stampaLibro(*libro)};
     }
+
+    print_centered_comment("My Library");
+    let path_book = "/home/dooraim/Develop/Rust/Rust-Bindgen-Example/mybind/library/libri.txt";
+    let books: Vec<Book>= Book::get_books(path_book);
+    Book::print_books(&books);
 
     
 
