@@ -21,7 +21,12 @@ ARFLAGS = rcs
 
 # C source files
 LIBC_DIR_LIBRARY = libc/library
-SRC_LIB = $(LIBC_DIR_LIBRARY)/biblioteca.c 
+LIBC_DIR_TEST = libc/test
+SRC_LIB = $(LIBC_DIR_LIBRARY)/biblioteca.c \
+	$(LIBC_DIR_TEST)/test.c \
+	$(LIBC_DIR_TEST)/include/test2.c \
+	$(LIBC_DIR_TEST)/include2/test3.c \
+
 OBJ = $(SRC_LIB:.c=.o)
 
 # rustc command
@@ -29,7 +34,7 @@ RUSTC=rustc
 
 # library path
 LIBRARY_BIN = bin
-LIBRARY = $(LIBRARY_BIN)/libbiblioteca.a
+LIBRARY = $(LIBRARY_BIN)/lib.a
 
 .PHONY: all build run clean
 
@@ -55,7 +60,8 @@ run: build
 
 # Clean the generated binary
 clean:
-	rm -rf $(BINDIR)/*
+	rm -rf $(BINDIR)/* && \
+    find . -name "*.o" -type f -delete
 
 # Build and run the project
 all: build run
