@@ -1,0 +1,17 @@
+LL12 Anna_Karenina LevTolstoj N 1877 4
+OO21 Otello WilliamShakespeare T 1603 2
+WE09 Orlando_Furioso LudovicoAriosto P 1516 5
+AD32 La_Bufera_e_altro EugenioMontale P 1956 2
+SD12 Sei_Personaggi_in_Cerca_d_Autore LuigiPirandello T 1921 2
+SS98 La_Casa_in_Collina CesarePavese N 1949 6
+GR00 Madame_Bovary GustaveFlaubert N 1856 1
+HE21 Antigone Sofocle T -442 2
+DW09 De_Rerum_Natura Lucrezio P -75 1
+IU01 Cuori_di_Tenebra JosephConrad N 1902 3
+KK55 Le_Citta_Invisibili ItaloCalvino N 1972 5
+ED65 Cent_Anni_di_Solitudine GabrielGarciaMarquez N 1967 4 
+ED89 Tonio_Kroger ThomasMann N 1903 1
+YT21 Aspettando_Godot SamuelBeckett T 1953 2
+DE12 Ars_Amatoria Ovidio P -1 3
+FF66 I_Fiori_del_Male CharlesBaudelaire P 1857 7
+XI22 La_Coscienza_di_Zeno ItaloSvevo N 1923 4
