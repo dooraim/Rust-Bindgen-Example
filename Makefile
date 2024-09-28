@@ -26,6 +26,7 @@ AR = ar
 ARFLAGS = rcs
 
 # C source files
+LIBC_DIR = libc
 LIBC_DIR_LIBRARY = libc/library
 LIBC_DIR_TEST = libc/test
 SRC_LIB = $(LIBC_DIR_LIBRARY)/biblioteca.c \
@@ -51,8 +52,8 @@ BINDINGS_FILE = $(BINDINGSDIR)/bindings.rs
 build: $(BINDIR) $(LIBRARY) $(BINDINGSDIR) $(BINDINGS_FILE)
 	$(RUSTC) $(RUSTC_FLAGS) -o $(BINARY) $(SRC) -l static=test -L $(LIBRARY_BIN)
 
-$(BINDINGS_FILE): $(LIBC_DIR_TEST)/test.h
-	$(BINDGEN) $(LIBC_DIR_TEST)/test.h -o $(BINDINGS_FILE)
+$(BINDINGS_FILE): $(LIBC_DIR)/wrapper.h
+	$(BINDGEN) $(LIBC_DIR)/wrapper.h -o $(BINDINGS_FILE)
 
 # Compile object files
 %.o: %.c
@@ -76,7 +77,8 @@ run: build
 # Clean the generated binary
 clean:
 	rm -rf $(BINDIR)/* && \
-    find . -name "*.o" -type f -delete
+    find . -name "*.o" -type f -delete && \
+	rm -rf $(BINDINGSDIR)
 
 # Build and run the project
 all: build run
