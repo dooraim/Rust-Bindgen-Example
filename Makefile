@@ -7,11 +7,17 @@ SRC=${SRC_DIR}/main.rs
 # Directory for the binary
 BINDIR=bin
 
+# Directory for the bindings
+BINDINGSDIR=bindings
+
 # Name of the binary to be generated
 BINARY=$(BINDIR)/my_rust_app
 
 # Compilation flags (optional)
 RUSTC_FLAGS=
+
+# bindgen command
+BINDGEN = bindgen
 
 # C compile
 CC = clang
@@ -34,13 +40,19 @@ RUSTC=rustc
 
 # library path
 LIBRARY_BIN = bin
-LIBRARY = $(LIBRARY_BIN)/lib.a
+LIBRARY = $(LIBRARY_BIN)/libtest.a
+
+# bindings path
+BINDINGS_FILE = $(BINDINGSDIR)/bindings.rs
 
 .PHONY: all build run clean
 
 # Rule to build the project
-build: $(BINDIR) $(LIBRARY)
-	$(RUSTC) $(RUSTC_FLAGS) -o $(BINARY) $(SRC)
+build: $(BINDIR) $(LIBRARY) $(BINDINGSDIR) $(BINDINGS_FILE)
+	$(RUSTC) $(RUSTC_FLAGS) -o $(BINARY) $(SRC) -l static=test -L $(LIBRARY_BIN)
+
+$(BINDINGS_FILE): $(LIBC_DIR_TEST)/test.h
+	$(BINDGEN) $(LIBC_DIR_TEST)/test.h -o $(BINDINGS_FILE)
 
 # Compile object files
 %.o: %.c
@@ -53,6 +65,9 @@ $(LIBRARY): $(OBJ)
 # Rule to create the bin directory if it doesn't exist
 $(BINDIR):
 	mkdir -p $(BINDIR)
+
+$(BINDINGSDIR):
+	mkdir -p $(BINDINGSDIR)
 
 # Rule to run the binary
 run: build
